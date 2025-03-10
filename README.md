@@ -18,7 +18,7 @@ Running The Emulator (emu8086) Intro 8086 Microprocessor Emulator, also known as
 2.	  Run  emu8086 icon (on the desktop or in the c:\EMU8086 folder of window) It has green color 
  
  
-3.		write the code for the appropriate program for ADDITION,SUBTRACTION, MULTIPLICATION,  DIVISION operations 
+3.	write the code for the appropriate program for ADDITION,SUBTRACTION, MULTIPLICATION,  DIVISION operations 
 
 4.	 Compile the program and check for the errors 
 5.	Run (once there is no syntax error) 
@@ -78,24 +78,89 @@ Running The Emulator (emu8086) Intro 8086 Microprocessor Emulator, also known as
 ## Programs for arithmetic  operations
 
 ## Addition  of 8 bit ALP 
-
+```
+org 100h
+MOV CL,00H
+MOV AL,[4200H]
+MOV BL,[4201H]
+ADD AL,BL
+JNC L
+INC CL
+L:MOV [4202H],AL
+MOV [4203H],CL
+ret
+```
 
 
 ## Output  
- 
-## Subtraction   of 8 bit numbers  ALP 
- 
+ ![Screenshot (607)](https://github.com/user-attachments/assets/84acf087-4c4c-4b9e-acfd-b40c7c986898)
+
+## Subtraction   of 8 bit numbers  ALP
+```
+org 100h
+MOV AL,[4300H]
+MOV BL,[4301H]
+SUB AL,BL
+MOV [4302H],AL
+ret
+```
 ## Output  
+![Screenshot (609)](https://github.com/user-attachments/assets/3fd9bf1d-bc60-4e16-aed1-cfd9fa4950a6)
+
 ## Multiplication alp 
+```
+org 100h
+MOV AL,[4400H]
+MOV BL,[4401H]
+MUL BL
+MOV [4402H],AX
+ret
+
+```
  ## Output  
+![Screenshot (610)](https://github.com/user-attachments/assets/3e2256e5-c0e6-4656-a677-dc582fe7059e)
 
 
 ## Division alp 
+```
+org 100h
+MOV AL,[4300H]
+MOV BL,[4301H]
+DIV BL
+MOV [4302H],AX
+ret
+
+```
 
 ## Output  
+![Screenshot (611)](https://github.com/user-attachments/assets/1441d3b0-f455-4a55-98ed-18888be96dbe)
 
+## logical :
+```
+org 100h
+          
+MOV AX, 0A32H
+MOV BX, 0B31H
+MOV SI, 5000H
+OR AX, BX
+MOV [SI], AX
+MOV AX, 0A32H
+AND AX, BX
+MOV [SI+2], AX  
+MOV AX,0A32H
+XOR AX, BX
+MOV [SI+4], AX
+MOV AX, 0A32H
+NOT AX
+MOV [SI+6], AX
+ret
+
+```
+## output
+![Screenshot (615)](https://github.com/user-attachments/assets/c19cd214-3cc1-43f0-81cb-48b571277da2)
 
 ## Result :
+The execution of ALP on fundamental arithmetic and logical operations is successfully completed.
  
 
 
