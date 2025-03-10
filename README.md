@@ -1,7 +1,7 @@
 # EXPERIMENT--01-ALP-FOR-8086
-Name :
-Roll no 
-Date of experiment :
+Name :PRIYANGHA G
+Roll no :212223040157
+Date of experiment :3/3/2025
 
 
 
